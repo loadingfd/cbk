@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>videojs视频播放</title>
+</head>
+<input id="txt"/>
+        <input type="button" value="提交" onclick="sub()">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.3.0/video-js.min.css" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/video.js/7.3.0/video.min.js"></script>
+<body>
+  <h3>视频播放</h3>
+  <video id="example" class="video-js vjs-default-skin" controls preload="none" >
+<source src="https://www.w3school.com.cn/i/movie.ogg">
+  </video>
+<script>
+
+            function sub(){
+                var content = document.getElementById("txt");
+                alert(content.value);
+                document.getElementById('example_html5_api').src=content.value
+            }
+
+    </script>
+</body>
+</html>
+<script>
+  var player = videojs('example', {
+    muted: false,
+    controls: true,
+    loop: false,
+    // 更多配置.....
+  });
+</script>
