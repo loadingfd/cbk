@@ -16,7 +16,22 @@
   gtag('js', new Date());
 
   gtag('config', 'G-NQMS90ZH3M');
+  
+  document.addEventListener('touchstart',function(){
+       document.getElementById('music').play();
+}, true);  
+
+  var played = false;
+document.addEventListener('touchstart',function(){
+       if (played == false) {
+              played = true;
+              document.getElementById('music').play();
+       }                 
+}, false);  
+  
 </script>
+<audio src="onlymycbksb.mp3" id="music" autoplay="autoplay"></audio>
+
 </head>
 <body class="is-preload">
 <!-- Header -->
@@ -37,10 +52,11 @@
     <section id="main" class="wrapper">
         <div class="inner">
             <h1 class="major">崔博啃喜欢看的二次元图片</h1>
-            <span class="image fit"><img src=" https://randpic.vercel.app" alt="崔博啃二次元图" id="pic"/></span>
+            <span class="image fit"><img src=" https://php-api-seven.vercel.app/api" alt="崔博啃二次元图" id="pic"/></span>
             <script>
             function change(){
-            document.getElementById("pic").setAttribute("src","https://randpic.vercel.app?"+Math.random());
+            document.getElementById("pic").setAttribute("src","https://php-api-seven.vercel.app/api?"+Math.random());
+            document.getElementById('music').play();
             }
             </script>
             <button onclick="change()">换一张</button>
