@@ -14,24 +14,8 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-NQMS90ZH3M');
-  
-  document.addEventListener('touchstart',function(){
-       document.getElementById('music').play();
-}, true);  
-
-  var played = false;
-document.addEventListener('touchstart',function(){
-       if (played == false) {
-              played = true;
-              document.getElementById('music').play();
-       }                 
-}, false);  
-  
 </script>
-<audio src="onlymycbksb.mp3" id="music" autoplay="autoplay"></audio>
-
 </head>
 <body class="is-preload">
 <!-- Header -->
@@ -54,12 +38,20 @@ document.addEventListener('touchstart',function(){
             <h1 class="major">崔博啃喜欢看的二次元图片</h1>
             <span class="image fit"><img src=" https://php-api-seven.vercel.app/api" alt="崔博啃二次元图" id="pic"/></span>
             <script>
+            var alwaysstop = 0;
+            function stop(){
+				document.getElementById('music').pause();
+				alwaysstop = 1;
+            }
             function change(){
-            document.getElementById("pic").setAttribute("src","https://php-api-seven.vercel.app/api?"+Math.random());
-            document.getElementById('music').play();
+				document.getElementById("pic").setAttribute("src","https://php-api-seven.vercel.app/api?"+Math.random());
+				if(!alwaysstop){
+					document.getElementById('music').play();
+				}
             }
             </script>
             <button onclick="change()">换一张</button>
+            <button onclick="stop()">关闭高雅音乐</button>
           </div>
     </section>
 
@@ -92,6 +84,7 @@ document.addEventListener('touchstart',function(){
 <script src="assets/js/breakpoints.min.js"></script>
 <script src="assets/js/util.js"></script>
 <script src="assets/js/main.js"></script>
+<audio src="onlymycbksb.mp3" id="music"></audio>
 
 </body>
 </html>
